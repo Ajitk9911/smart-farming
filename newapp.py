@@ -12,14 +12,14 @@ import os
 TEXT_MODEL_ID = 'https://drive.google.com/file/d/190g1lDXVk94PUUxDJETqyn5kVZoYs_5r/view?usp=drivesdk'   # Replace with actual file ID
 #IMAGE_MODEL_ID = 'https://drive.google.com/file/d/1mosGYxpt4y4Yjuro62domQ9_yM2Egf47/view?usp=drivesdk'  # Replace with actual file ID
 
-TEXT_MODEL_PATH = '/content/drive/MyDrive/btp 8 sem final/saved_model/text_model.pkl'
+TEXT_MODEL_PATH = '/text_model.pkl'
 #IMAGE_MODEL_PATH = '/content/drive/MyDrive/btp 8 sem final/saved_model/image_model.h5'
 
 # Download models from Google Drive if not already present
-def download_models():
-    if not os.path.exists(TEXT_MODEL_PATH):
-        text_url = 'https://drive.google.com/file/d/190g1lDXVk94PUUxDJETqyn5kVZoYs_5r/view?usp=drivesdk'
-        gdown.download(text_url, TEXT_MODEL_PATH, quiet=False)
+#def download_models():
+#    if not os.path.exists(TEXT_MODEL_PATH):
+ #       text_url = 'https://drive.google.com/file/d/190g1lDXVk94PUUxDJETqyn5kVZoYs_5r/view?usp=drivesdk'
+ #       gdown.download(text_url, TEXT_MODEL_PATH, quiet=False)
 
     #if not os.path.exists(IMAGE_MODEL_PATH):
      #   image_url = 'https://drive.google.com/file/d/1mosGYxpt4y4Yjuro62domQ9_yM2Egf47/view?usp=drivesdk'
@@ -28,7 +28,7 @@ def download_models():
 # Load models
 @st.cache_resource
 def load_models():
-    download_models()
+    #download_models()
     text_model = joblib.load(TEXT_MODEL_PATH)
     #image_model = load_model(IMAGE_MODEL_PATH)
     return text_model, #image_model
