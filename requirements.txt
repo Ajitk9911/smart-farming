@@ -1,0 +1,6 @@
+streamlit
+joblib
+gdown
+tensorflow
+pillow
+numpy
